@@ -8,13 +8,24 @@ use App\Core\Router\Uri;
 
 $layout = new Layout();
 
-$links = [
-    '/' => 'login/view_login'
-];
+$links = [];
+
+
+if (!isset($_SESSION['USER'])) {
+    $links = [
+        '/' => 'login/view_login'
+    ];
+
+    $master = $layout->master('templates/login/index');
+} else {
+    $links = [
+        '/' => 'dashboard/view_dashboard'
+    ];
+    $master = $layout->master('templates/sistema/index');
+}
 
 $uri = Uri::loadUri();
-
 $router = Route::loadRouter($uri, $links);
 
 require $router;
-require $layout->master('templates/login/index');
+require $master;
