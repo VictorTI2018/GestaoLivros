@@ -29,6 +29,32 @@
     width: 140px;
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: rgb(76, 139, 175);
+    color: white;
+}
+
 .sistema-main {
     grid-area: sistema-main;
     background: linear-gradient(to left, #cccdcf, #ccccce, #ccccce, #cbcbcd, #cbcbcc, #cdcdcd, #cececf, #d0d0d0, #d4d4d4, #d8d8d8, #dddddd, #e1e1e1);
@@ -42,10 +68,10 @@
     background-color: rgb(236, 230, 230);
     padding: 20px;
     border-radius: 6px;
-    box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.75);
 }
 
 .sistema-footer {
-    grid-area: sistema-footer; 
+    grid-area: sistema-footer;
     background: linear-gradient(to left, #508ae5, #2b95e5, #009ee1, #00a5da, #00acd2, #17adce, #27afc9, #33b0c5, #32aec4, #30acc4, #2faac3, #2ea8c2);
 }

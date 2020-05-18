@@ -17,6 +17,12 @@
             <div class="sistema-aside-title">
                 <img class="sistema-aside-logo" src="public/img/logo1.png" alt="logo">
             </div>
+            <div class="topnav">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">Usuarios</a>
+                <a href="#contact">Clientes</a>
+                <a href="#about">Livros</a>
+            </div>
         </aside>
         <main class="sistema-main">
             <section class="sistema-content">
