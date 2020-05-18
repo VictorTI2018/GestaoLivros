@@ -17,6 +17,48 @@ const ajaxPost = (url, values) => {
     })
 }
 
+const ajaxGet = (url) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            url: `${URL}/${url}`,
+            dataType: "json",
+            success: function (resp) {
+                resolve(resp)
+            },
+            error: function (err) {
+                reject(err)
+            }
+        });
+    })
+}
+
+const openModal = (selector) => {
+    $(selector).modal('show')
+}
+
+const closeModal = (selector) => {
+    $(selector).modal('hide')
+}
+
+const openModalLogout = () => {
+    openModal('#logoutModal')
+}
+
+const logout = () => {
+    ajaxGet('login/index.php?action=logout')
+        .then((res) => {
+            if (res.status) {
+                window.location.href = "/"
+                closeModal('#logoutModal')
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
+}
+
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();

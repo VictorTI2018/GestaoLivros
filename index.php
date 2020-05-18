@@ -19,13 +19,18 @@ if (!isset($_SESSION['USER'])) {
     $master = $layout->master('templates/login/index');
 } else {
     $links = [
-        '/' => 'dashboard/view_dashboard'
+        '/' => 'dashboard/view_dashboard',
+        '/user_view_all' => 'user/user_view_all'
     ];
     $master = $layout->master('templates/sistema/index');
 }
 
 $uri = Uri::loadUri();
 $router = Route::loadRouter($uri, $links);
+if (!$router) {
+    $layout->add('404');
+    require $master;
+}
 
 require $router;
 require $master;

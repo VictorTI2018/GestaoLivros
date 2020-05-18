@@ -1,0 +1,1 @@
+<h2 class="text-center">404 Página não encontrada</h2>
