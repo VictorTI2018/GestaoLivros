@@ -12,7 +12,20 @@
 
 <body>
     <div id="sistema">
-        <header class="sistema-header"></header>
+        <header class="sistema-header">
+            <div class="user-dropdown">
+                <div class="user-button">
+                    <span class="d-none d-sm-block">Olá, <?= $_SESSION['USER']['USERNAME']; ?></span>
+                    <div class="user-dropdown-img">
+                        <img class="user-avatar" src="public/img/avatar.png" alt="avatar">
+                    </div>
+                </div>
+                <div class="user-dropdown-content">
+                    <a href="#">Perfil</a>
+                    <a href="#"> Sair</a>
+                </div>
+            </div>
+        </header>
         <aside class="sistema-aside">
             <div class="sistema-aside-title">
                 <img class="sistema-aside-logo" src="public/img/logo1.png" alt="logo">
@@ -31,6 +44,7 @@
         </main>
         <footer class="sistema-footer"></footer>
     </div>
+
     <script src="public/assets/js/jquery.min.js"></script>
     <script src="public/assets/js/bootstrap.min.js"></script>
     <script src="public/assets/js/geral.js"></script>
