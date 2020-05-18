@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    #app {
+        height: 105vh;
+        overflow-y: scroll;
+    }
+    .login-main {
+        height: calc(105vh - 180px);
+    }
+}

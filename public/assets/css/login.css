@@ -1,0 +1,52 @@
+#app {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "login-header" "login-main" "login-footer";
+    grid-template-rows: 90px 1fr 90px;
+    grid-template-columns: 1fr;
+}
+
+.login-header {
+    grid-area: login-header;
+    background: linear-gradient(to left, #508ae5, #2b95e5, #009ee1, #00a5da, #00acd2, #17adce, #27afc9, #33b0c5, #32aec4, #30acc4, #2faac3, #2ea8c2);
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.login-header > .logo {
+    height: 120px;
+    width: 120px;
+}
+
+.logo_thumb {
+    height: 85px;
+    width: 85px;
+}
+
+.logo-header-card {
+    height: 95px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-main {
+    grid-area: login-main;
+    background: linear-gradient(to left, #cccdcf, #ccccce, #ccccce, #cbcbcd, #cbcbcc, #cdcdcd, #cececf, #d0d0d0, #d4d4d4, #d8d8d8, #dddddd, #e1e1e1);
+    height: calc(100vh - 180px);
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.login-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.login-footer {
+    grid-area: login-footer;
+    background: linear-gradient(to left, #508ae5, #2b95e5, #009ee1, #00a5da, #00acd2, #17adce, #27afc9, #33b0c5, #32aec4, #30acc4, #2faac3, #2ea8c2);
+}
