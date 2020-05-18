@@ -1,0 +1,51 @@
+#sistema {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "sistema-aside sistema-header" "sistema-aside sistema-main" "sistema-aside sistema-footer";
+    grid-template-rows: 90px 1fr 90px;
+    grid-template-columns: 230px 1fr;
+}
+
+.sistema-header {
+    grid-area: sistema-header;
+    background: linear-gradient(to left, #508ae5, #2b95e5, #009ee1, #00a5da, #00acd2, #17adce, #27afc9, #33b0c5, #32aec4, #30acc4, #2faac3, #2ea8c2);
+}
+
+.sistema-aside {
+    grid-area: sistema-aside;
+    background: radial-gradient(circle, #041021, #071323, #091525, #0b1728, #0d192a);
+}
+
+.sistema-aside-title {
+    height: 90px;
+    border-bottom: 1px solid #DDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sistema-aside-logo {
+    height: 140px;
+    width: 140px;
+}
+
+.sistema-main {
+    grid-area: sistema-main;
+    background: linear-gradient(to left, #cccdcf, #ccccce, #ccccce, #cbcbcd, #cbcbcc, #cdcdcd, #cececf, #d0d0d0, #d4d4d4, #d8d8d8, #dddddd, #e1e1e1);
+    height: calc(100vh - 180px);
+    padding: 20px;
+}
+
+.sistema-content {
+    position: relative;
+    height: 100%;
+    background-color: rgb(236, 230, 230);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+}
+
+.sistema-footer {
+    grid-area: sistema-footer; 
+    background: linear-gradient(to left, #508ae5, #2b95e5, #009ee1, #00a5da, #00acd2, #17adce, #27afc9, #33b0c5, #32aec4, #30acc4, #2faac3, #2ea8c2);
+}
