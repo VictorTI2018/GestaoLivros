@@ -14,11 +14,11 @@ trait PersistDB
      * @param array|object $data
      * @return void
      */
-    public static function insert($table, $data)
+    public static function insert($table, $columns)
     {
         $query = "INSERT INTO {$table}(";
-        $query .= implode(',', array_keys($data)) . ")VALUES(";
-        $query .= ":" . implode(", :", array_keys($data)) . ')';
+        $query .= implode(',', $columns) . ")VALUES(";
+        $query .= ":" . implode(", :", $columns) . ')';
 
         return $query;
     }
@@ -31,12 +31,12 @@ trait PersistDB
      * @param array $data
      * @return void
      */
-    public static function edit($table, $where, $data)
+    public static function edit($table, $where, $columns)
     {
-        unset($data[array_keys($where)[0]]);
+       
         $query = "UPDATE {$table} SET ";
-        foreach ($data as $key => $value) {
-            $query .= "{$key} = :{$key}, ";
+        foreach ($columns as $key => $value) {
+            $query .= "{$value} = :{$value}, ";
         }
         $query = rtrim($query, ', ');
         $whereKeys = array_keys($where);

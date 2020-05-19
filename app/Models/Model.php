@@ -12,6 +12,8 @@ abstract class Model
     use PersistDB;
     protected $table;
 
+    protected $columns = [];
+
     /** @var \App\Core\Database\Connection */
     protected $db;
 
@@ -58,7 +60,7 @@ abstract class Model
      */
     public function save($data)
     {
-        $query = PersistDB::insert($this->table, $data);
+        $query = PersistDB::insert($this->table, $data, $this->columns);
         $prepare = $this->db->connection()->prepare($query);
         return $prepare->execute($data);
     }
@@ -73,7 +75,7 @@ abstract class Model
      */
     public function update($where, $data)
     {
-        $query = PersistDB::edit($this->table, $where, $data);
+        $query = PersistDB::edit($this->table, $where, $this->columns);
         $prepare = $this->db->connection()->prepare($query);
         return $prepare->execute($data);
     }

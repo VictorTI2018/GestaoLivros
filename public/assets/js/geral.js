@@ -81,6 +81,13 @@ const createButton = (label, className) => {
    return $('<button>').addClass(`text-white btn btn-${className}`).html(label)
 }
 
+
+const modalPerfilUser = () => {
+    openModal('#perfilModal')
+    let perfil = JSON.parse(window.localStorage.getItem('user'))
+    $('#username_perfil').val(perfil.username)
+}
+
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();

@@ -52,6 +52,7 @@ const editUser = () => {
     let model = $('#user_edit_form').serializeObject()
     ajaxPost('user/index.php?action=user_edit', model)
         .then((res) => {
+            console.log(res)
             if (res.status) {
                 alert("Atualizado com sucesso!")
                 closeModal('#userEditModal')

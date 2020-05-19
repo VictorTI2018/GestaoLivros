@@ -22,11 +22,35 @@
                     </div>
                 </div>
                 <div class="user-dropdown-content">
-                    <a href="#">Perfil</a>
+                    <a onclick="modalPerfilUser()">Perfil</a>
                     <a onclick="openModalLogout()"> Sair</a>
                 </div>
             </div>
         </header>
+        <div class="modal fade" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="perfilModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="perfilModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="perfil_form">
+                            <div class="form-group">
+                                <label for="username_perfil">Username:</label>
+                                <input type="text" name="username_perfil" id="username_perfil" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <aside class="sistema-aside">
             <div class="sistema-aside-title">
                 <img class="sistema-aside-logo" src="public/img/logo1.png" alt="logo">
