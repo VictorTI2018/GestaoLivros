@@ -59,6 +59,28 @@ const logout = () => {
 
 }
 
+const validField = (selector, msg) => {
+    alert(`${msg}`)
+    $(selector).addClass('valid-field')
+    setTimeout(() => {
+        $(selector).removeClass('valid-field')
+    }, 3000)
+}
+
+function dataAtualFormatada(data){
+    data = new Date(),
+        dia  = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = data.getFullYear();
+    return diaF+"/"+mesF+"/"+anoF;
+}
+
+const createButton = (label, className) => {
+   return $('<button>').addClass(`text-white btn btn-${className}`).html(label)
+}
+
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();

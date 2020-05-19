@@ -68,6 +68,7 @@
     <script src="public/assets/js/bootstrap.min.js"></script>
     <script src="public/assets/js/geral.js"></script>
     <script src="public/assets/app/dashboard/index.js"></script>
+    <script src="public/assets/app/user/index.js"></script>
 </body>
 
 </html>

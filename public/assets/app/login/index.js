@@ -17,6 +17,6 @@ const logar = () => {
                 console.log(err)
             })
     } else {
-        alert("Por favor preencha todos os dados!")
+        validField('.form-control', "Por favor os campos em vermlhos")
     }
 }

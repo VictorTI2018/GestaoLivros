@@ -30,6 +30,10 @@
     justify-content: center;
 }
 
+.valid-field  {
+    border: 1px solid red;
+}
+
 .login-main {
     grid-area: login-main;
     background: linear-gradient(to left, #cccdcf, #ccccce, #ccccce, #cbcbcd, #cbcbcc, #cdcdcd, #cececf, #d0d0d0, #d4d4d4, #d8d8d8, #dddddd, #e1e1e1);
