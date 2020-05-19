@@ -4,7 +4,6 @@
     </div>
 </div>
 <form id="user_form">
-    <input type="hidden" name="id">
     <div class="row">
         <div class="form-group col-md-7">
             <label for="username">Username:</label>

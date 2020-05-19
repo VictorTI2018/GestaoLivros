@@ -13,7 +13,7 @@ if ($_GET['action'] === "logar" && isset($_POST)) {
             $_SESSION['USER']['USERNAME'] = $user->username;
             $_SESSION['USER']['PASSWORD'] = $user->password;
 
-            __(["status" => true]);
+            __(["status" => true, 'user' => $user]);
         } else {
             __(["status" => false, "validator" => true, "message" => "Senha incorreta"]);
         }

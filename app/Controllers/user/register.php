@@ -4,7 +4,6 @@ use App\Core\Input\Field;
 use App\Models\User\User;
 
 if (isset($_SESSION['USER'])) {
-    unset($_POST['id']);
     $field = new Field();
     $data = $field->request($_POST);
 

@@ -32,6 +32,8 @@ const onSaveUser = () => {
 
 }
 
+
+
 const insertUser = (model) => {
     ajaxPost('user/index.php?action=user_register', model)
         .then((res) => {
@@ -46,20 +48,67 @@ const insertUser = (model) => {
         })
 }
 
+const editUser = () => {
+    let model = $('#user_edit_form').serializeObject()
+    ajaxPost('user/index.php?action=user_edit', model)
+        .then((res) => {
+            if (res.status) {
+                alert("Atualizado com sucesso!")
+                closeModal('#userEditModal')
+                window.location.reload()
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
+}
+
+const ModalEditarUser = (data) => {
+    openModal('#userEditModal')
+    loadUser(data)
+}
+
+const removeUser = (id) => {
+    if (confirm("Deseja realmente apagar este usuario ?")) {
+        ajaxGet(`user/index.php?action=user_destroy&id=${id}`)
+            .then((res) => {
+                if(res.status) {
+                    alert("Deletado com sucesso.")
+                    getAll()
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+    }
+}
+
 const renderRows = (data) => {
     let rows = data.map(item => {
-        let updatedButton = createButton('Editar', 'warning')
-        let deletedButton = createButton('Excluir', 'danger')
-        return $('<tr>')
-            .append($('<td>').append(item.id))
-            .append($('<td>').append(item.username))
-            .append($('<td>').append(dataAtualFormatada(item.created_at)))
-            .append($('<td>').append(updatedButton).append(deletedButton))
+        let user = JSON.parse(window.localStorage.getItem('user'))
+        if (user.id !== item.id) {
+            let updatedButton = createButton('Editar', 'warning')
+            updatedButton.click(() => ModalEditarUser(item))
+
+            let deletedButton = createButton('Excluir', 'danger')
+            deletedButton.click(() => removeUser(item.id))
+
+            return $('<tr>')
+                .append($('<td>').append(item.id))
+                .append($('<td>').append(item.username))
+                .append($('<td>').append(dataAtualFormatada(item.created_at)))
+                .append($('<td>').append(updatedButton).append(deletedButton))
+        }
     })
     $('#usuarioRows').html(rows)
 }
 
 
+const loadUser = (data) => {
+    $('#id').val(data.id)
+    $('#username').val(data.username)
+    $('#password').val(data.password)
+}
 
 $(() => {
     getAll()

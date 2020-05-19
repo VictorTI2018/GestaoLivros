@@ -13,6 +13,12 @@ if (isset($_GET['action'])) {
         case 'user_filter':
             require __DIR__ . '/../../app/Controllers/user/filter.php';
             break;
+        case 'user_edit':
+            require __DIR__ . '/../../app/Controllers/user/edit.php';
+            break;
+        case 'user_destroy':
+            require __DIR__ . '/../../app/Controllers/user/destroy.php';
+            break;
     }
 } else {
     header('location: /user_view_all');

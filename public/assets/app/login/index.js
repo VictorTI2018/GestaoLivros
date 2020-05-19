@@ -5,6 +5,7 @@ const logar = () => {
             .then((res) => {
                if(res.status) {
                 alert("Logado com sucesso")
+                window.localStorage.setItem('user', JSON.stringify(res.user))
                 window.location.href = "/"
                } else if(!res.status && res.validator) {
                    let erro = "";
