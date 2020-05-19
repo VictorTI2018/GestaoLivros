@@ -20,7 +20,8 @@ if (!isset($_SESSION['USER'])) {
 } else {
     $links = [
         '/' => 'dashboard/view_dashboard',
-        '/user_view_all' => 'user/user_view_all'
+        '/user_view_all' => 'user/user_view_all',
+        '/user_view_register' => 'user/user_view_register'
     ];
     $master = $layout->master('templates/sistema/index');
 }

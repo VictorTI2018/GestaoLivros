@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/assets/css/padrao.css">
     <link rel="stylesheet" href="public/assets/css/sistema.css">
+    <link rel="stylesheet" href="public/assets/css/pages.css">
 </head>
 
 <body>

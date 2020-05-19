@@ -1,7 +1,7 @@
 <span class="mb-3">
     <div class="row mb-3">
         <div class="col-md-2">
-            <a href="#" class="btn btn-success btn-block">Novo Usuario</a>
+            <a href="/user_view_register" class="btn btn-success btn-block">Novo Usuario</a>
         </div>
     </div>
     <div class="row">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary btn-block">Buscar</button>
+            <button onclick="applyFilter()" class="btn btn-primary btn-block">Buscar</button>
         </div>
     </div>
 </span>
